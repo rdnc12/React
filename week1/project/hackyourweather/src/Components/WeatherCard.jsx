@@ -1,22 +1,21 @@
 import React from 'react';
 
 const WeatherCard=(props)=> {
-  const { cityName, countryName, main, description, temp_min, temp_max, lon, lat } = props;
+  const { weather } = props;
   return (
-    <div>
       <div className="card">
         <h4>
-          {cityName}, {countryName}
+          {weather.city}
         </h4>
-        <h6> {main} </h6>
-        <p> {description} </p>
-        <p> min temp: {temp_min} </p>
-        <p> max temp: {temp_max} </p>
+        <h6> {weather.main} </h6>
+      
+        <p> min temp: {weather.temp_min} </p>
+        <p> max temp: {weather.temp_max} </p>
         <p>
-          location: {lon}, {lat}
+          location: {weather.location}
         </p>
       </div>
-    </div>
+    
   );
 }
 
