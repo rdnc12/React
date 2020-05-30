@@ -1,0 +1,13 @@
+.Button {
+  background-color: transparent;
+  border: none;
+  color: green;
+  border: 2px solid black;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 20px;
+  font-weight: bold;
+}
+
+
