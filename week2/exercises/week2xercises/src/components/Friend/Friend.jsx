@@ -45,14 +45,15 @@ const Friend=() =>{
       <h1>Exercise 1 - Get Random Friend</h1>
       <Button onClick={getFriend} title="friend" />
       {isLoading && <Spinner/>} 
-      { <FriendProfile 
+      {hasError && <p> Something went wrong!!! </p>}
+      {!isLoading && !hasError && <FriendProfile 
       firstName={friend.firstName} 
       lastName={friend.lastName} 
       address={friend.address} 
       country={friend.country} 
       email={friend.email} 
       phone={friend.phone}/>}
-      {hasError && <p> Something went wrong!!! </p>}
+      
     </div>
   );
 }
