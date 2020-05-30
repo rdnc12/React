@@ -3,12 +3,12 @@ import React from 'react';
 
 import classes from "./Button.module.css";
 
- const Button=({ onClick }) =>{
+ const Button=({ onClick,title }) =>{
 
   return (
     <div>
       <button className={classes.Button} onClick={onClick}>
-        Get a dog photo
+        Get a {title}
       </button>
     </div>
   );

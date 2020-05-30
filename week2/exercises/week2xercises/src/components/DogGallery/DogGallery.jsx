@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 import Spinner from '../UI/Spinner/Spinner'
-import Button from './Button/Button';
+import Button from '../UI/Button/Button';
 import DogPhoto from './DogPhoto/DogPhoto';
 
 const DogGallery=() =>{
@@ -45,7 +45,7 @@ const DogGallery=() =>{
 
       {isLoading && <Spinner/>}
       {hasError && <p> Something went wrong! </p>}
-      <Button onClick={getDogPhoto}/>
+      <Button onClick={getDogPhoto} title={'dog photo!'}/>
     </div>
   );
 }
