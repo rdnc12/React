@@ -7,8 +7,8 @@ const Guarantee=(props)=> {
   return (
     <div className="col-md-4">
       <img src={img} alt={title + ' icon'} />
-      <h6> {title} </h6>
-      <p>{description}</p>
+      <h6> title: {title} </h6>
+      <p>description:{description}</p>
     </div>
   );
 }

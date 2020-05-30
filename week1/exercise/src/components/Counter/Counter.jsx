@@ -9,7 +9,7 @@ const Counter = () => {
   return (
     <div >
       <h2>{feedback}</h2>
-      <Button changed={() => setCount(count + 1)} />
+      <Button onButtonClicked={() => setCount(count + 1)} />
       <Count count={count} />
     </div>
   )
