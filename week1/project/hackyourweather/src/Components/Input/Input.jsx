@@ -8,6 +8,7 @@ const Input=({ inputValue, setInputValue }) =>{
   };
   return (
     <input
+      className="searchInput"
       name="searchInput"
       type="search"
       placeholder="Search City"

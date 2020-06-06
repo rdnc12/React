@@ -8,7 +8,7 @@ import Spinner from './Components/Spinner/Spinner'
 function App() {
 
   const [inputValue, setInputValue] = useState('');
-  const [cityWeather, setCityWeather] = useState({});
+  const [cityWeather, setCityWeather] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const [hasError, setError] = useState(false);
 
@@ -24,13 +24,7 @@ function App() {
         if (response.status !== 500) {
           const data = await response.json();
           
-          setCityWeather({
-            city: `${data.name}, ${data.sys.country}`,
-            main: data.weather[0].main,
-            temp_max: data.main.temp_max,
-            temp_min: data.main.temp_min,
-            location: `${data.coord.lat}, ${data.coord.lon}`,
-          });
+          setCityWeather((cityList)=>[data, ...cityList]);
         } else {
           throw Error('Something went wrong.');
         }
@@ -47,6 +41,13 @@ function App() {
     e.preventDefault();
   };
   const isCityWeatherReady = Object.keys(cityWeather).length !== 0;
+  
+  const closeWeatherCard = (id) => {
+    setCityWeather((list) => {
+      list = list.filter((card) => card.id !== id);
+      return list;
+    });
+  };
 
   return (
     <div className="App">
@@ -55,10 +56,11 @@ function App() {
       {isLoading && <Spinner/>}
       {hasError && <p> Something went wrong! </p>}
       {isCityWeatherReady && (
-        <div>
-          <WeatherCard 
-          weather={cityWeather}/>
+       cityWeather.map((city) => (
+        <div key={city.id}>
+          <WeatherCard cityWeather={city} closeWeather={closeWeatherCard} />
         </div>
+      ))
       )}
     </div>
   );

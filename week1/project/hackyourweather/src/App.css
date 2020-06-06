@@ -10,6 +10,13 @@ div.card {
   text-align: left;
   padding: 5px 30px;
 }
+div.close {
+  margin-top: 10px;
+  text-align: right;
+}
+div.close:hover {
+  cursor: pointer;
+}
 .card p:first-of-type {
   margin-top: 3px;
   margin-bottom: 30px;
@@ -22,4 +29,23 @@ h6 {
   font-weight: bold;
   font-size: 1rem;
   margin-bottom: 0px;
+}
+.searchButton {
+  font-size: 1.3rem;
+  background-color: #e5b6b6;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.searchButton:hover {
+  background-color: rgba(139, 38, 38, 0.144);
+  cursor: pointer;
+}
+.searchInput {
+  width: 360px;
+  height: 35px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 2px solid #e6e6e6;
+  padding: 5px 10px;
+  font-size: 1rem;
 }
