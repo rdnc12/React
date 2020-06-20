@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const WeatherCard=(props)=> {
   const { cityWeather, closeWeather }=props;
@@ -23,7 +24,9 @@ const WeatherCard=(props)=> {
           X
         </div>
         <h4>
-          {name}, {country}
+        <Link to={'/' + id}>
+            {name}, {country}
+          </Link>
         </h4>
         <h6> {main} </h6>
         <p> {description} </p>

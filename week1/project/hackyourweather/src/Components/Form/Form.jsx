@@ -3,9 +3,9 @@ import React from 'react';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 
-const Form=(props)=> {
+const Form = (props)=> {
 
-    const { inputValue, setInputValue, onSubmit }=props;
+    const { inputValue, setInputValue, onSubmit } = props;
 
   return (
     <form>
